@@ -6,8 +6,7 @@ simplest ways the concepts of SAM map onto it's clearnet equivalents. It's been
 created as a set of examples for Def Con 27. When it's done being a basic
 example it might become a socket library, but probably not. sam3 is better.
 
-accept.go
-============
+#### accept.go
 
 ```
 package susc
@@ -36,8 +35,7 @@ func (c *Client) StreamAccept(id int32) (*Reply, error) {
 	return r, nil
 }
 ```
-client.go
-============
+#### client.go
 
 ```
 package susc
@@ -83,8 +81,7 @@ func Base64(destination string) string {
 	return ""
 }
 ```
-command.go
-============
+#### command.go
 
 ```
 package susc
@@ -108,8 +105,7 @@ func (c *Client) Command(str string, args ...interface{}) (*Reply, error) {
 	return ParseReply(string(line))
 }
 ```
-conn_test.go
-============
+#### conn_test.go
 
 ```
 package susc
@@ -164,8 +160,7 @@ func TestMe(t *testing.T) {
 
 }
 ```
-connect.go
-============
+#### connect.go
 
 ```
 package susc
@@ -194,8 +189,7 @@ func (c *Client) StreamTCPConnect(id int32, dest string) error {
 	return nil
 }
 ```
-hello.go
-============
+#### hello.go
 
 ```
 package susc
@@ -221,8 +215,7 @@ func (c *Client) Hello() error {
 	return nil
 }
 ```
-read.go
-============
+#### read.go
 
 ```
 package susc
@@ -240,8 +233,7 @@ func (c *Client) ReadLine() (string, error) {
     return string(bytes), nil
 }
 ```
-reply.go
-============
+#### reply.go
 
 ```
 package susc
@@ -285,8 +277,7 @@ func ParseReply(line string) (*Reply, error) {
 	return r, nil
 }
 ```
-session.go
-============
+#### session.go
 
 ```
 package susc
@@ -322,8 +313,7 @@ func (c *Client) CreateStreamSession(id int32, dest, sigtype, options string) (s
 	return r.Pairs["DESTINATION"], nil
 }
 ```
-write.go
-============
+#### write.go
 
 ```
 package susc
